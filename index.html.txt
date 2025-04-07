@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mAIzcepis</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f4f0;
+      color: #3e3e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #d2691e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #b2541a;
+    }
+    .recipe {
+      max-width: 600px;
+      margin-top: 30px;
+      font-size: 16px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>mAIzcepis</h1>
+  <button onclick="generateRecipe()">Ģenerēt maizes recepti</button>
+  <div class="recipe" id="recipeArea">Nospied pogu, lai iegūtu maizes recepti!</div>
+
+  <script>
+    const recipes = [
+      "Vienkāršā baltmaize:\n- 500g miltu\n- 300ml silta ūdens\n- 1 paciņa sausā rauga\n- 1 tējk. cukura\n- 1 tējk. sāls\n\nSajauc sastāvdaļas, ļauj mīklai uzrūgt 1 stundu, cep 200°C ~30 min.",
+      "Rudzu maize:\n- 300g rudzu miltu\n- 200g kviešu miltu\n- 350ml ūdens\n- 1 tējk. sāls\n- 1 ēd.k. medus\n- 1 paciņa sausā rauga\n\nSamaisi, uzrūdini un cep 190°C ~40 min.",
+      "Čiabata:\n- 500g miltu\n- 400ml ūdens\n- 10g rauga\n- 10g sāls\n\nĻauj uzrūgt 12h ledusskapī, formē, cep 220°C ~25 min.",
+      "Pilngraudu maize:\n- 300g pilngraudu miltu\n- 200g kviešu miltu\n- 350ml ūdens\n- 1 tējk. sāls\n- 1 paciņa rauga\n- 2 ēd.k. saulespuķu sēklu\n\nSamaisi, ļauj uzrūgt un cep 200°C ~35 min.",
+      "Ķiploku maize:\n- 500g miltu\n- 300ml silta ūdens\n- 1 paciņa rauga\n- 1 tējk. sāls\n- 2 daiviņas sasmalcināta ķiploka\n- 1 ēd.k. olīveļļas\n\nSamaisi, uzrūdini un cep 200°C ~30 min."
+    ];
+
+    function generateRecipe() {
+      const recipe = recipes[Math.floor(Math.random() * recipes.length)];
+      document.getElementById('recipeArea').textContent = recipe;
+    }
+  </script>
+</body>
+</html>
